@@ -6,12 +6,17 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+# Set environment variables
+env:
+  # To run tests in CI mode
+  CI: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,3 +37,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: check lint
         run: npm run lint
+
+      - name: run tests
+        run: npm run test
