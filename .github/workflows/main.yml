@@ -26,5 +26,9 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: install package
+        run: npm install
+
+      # Runs a single command using the runners shell
+      - name: check lint
         run: npm run lint
