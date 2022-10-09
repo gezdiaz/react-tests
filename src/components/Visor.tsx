@@ -14,6 +14,7 @@ export const Visor = ({ expresion, error }: visorProps): JSX.Element => {
       value={expresion}
       error={hasError}
       helperText={errorTranslate(error ?? "")}
+      data-testid="visor-testid"
     />
   );
 };
