@@ -1,16 +1,44 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from "./App";
+import App from "./pages/App";
+import Calculator from "./pages/Calculator";
+import ErrorPage from "./pages/ErrorPage";
+import Root from "./pages/Root";
+import User, { loader as userLoader } from "./pages/User";
 import reportWebVitals from "./reportWebVitals";
-import Calculator from "./Calculator";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/calculator",
+        element: <Calculator />,
+      },
+      {
+        path: "/default-app",
+        element: <App />,
+      },
+      {
+        path: "/user/:userId",
+        element: <User />,
+        loader: userLoader,
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <Calculator />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

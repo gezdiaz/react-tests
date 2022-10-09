@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
 import { Stack } from "@mui/system";
 import { useState } from "react";
-import { ButtonGrid } from "./components/ButtonGrid";
-import { Visor } from "./components/Visor";
+import { ButtonGrid } from "../components/ButtonGrid";
+import { Visor } from "../components/Visor";
 
 const Calculator = (): JSX.Element => {
   const [currentExpresion, setExpresion] = useState("");
