@@ -126,9 +126,9 @@ export const ButtonGrid = ({
   ];
 
   return (
-    <Grid container columns={4} width={"100%"}>
+    <Grid container columns={4} width={"100%"} data-testid="grid-testid">
       {buttonGrid.map(({ label, action, buttonVariant = "outlined" }) => (
-        <Grid item xs={1} padding={1}>
+        <Grid item xs={1} padding={1} key={label}>
           <CalculatorButton
             label={label}
             action={action}

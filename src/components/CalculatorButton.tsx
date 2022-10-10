@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 interface numberProps {
   label: string;
   action: (number: string) => void;
-  variant: "outlined" | "contained" | "text";
+  variant?: "outlined" | "contained" | "text";
 }
 
 export const CalculatorButton = ({
