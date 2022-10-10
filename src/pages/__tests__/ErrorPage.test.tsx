@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import reactRouter, { useRouteError } from "react-router-dom";
+import reactRouter from "react-router-dom";
 import ErrorPage from "../ErrorPage";
 
 jest.mock("react-router-dom", () => ({
@@ -19,7 +19,7 @@ describe("ErrorPage", () => {
     const messageElement = screen.getByText("Test message");
     expect(messageElement).toBeInTheDocument();
   });
-  test("ErrorPage renders error message", () => {
+  test("ErrorPage renders error statusText", () => {
     const useRouterErrorSpy = jest
       .spyOn(reactRouter, "useRouteError")
       .mockImplementationOnce(() => ({
