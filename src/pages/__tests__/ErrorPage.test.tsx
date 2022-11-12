@@ -9,23 +9,19 @@ jest.mock("react-router-dom", () => ({
 
 describe("ErrorPage", () => {
   test("ErrorPage renders error message", () => {
-    const useRouterErrorSpy = jest
-      .spyOn(reactRouter, "useRouteError")
-      .mockImplementationOnce(() => ({
-        statusText: "",
-        message: "Test message",
-      }));
+    jest.spyOn(reactRouter, "useRouteError").mockImplementationOnce(() => ({
+      statusText: "",
+      message: "Test message",
+    }));
     render(<ErrorPage />);
     const messageElement = screen.getByText("Test message");
     expect(messageElement).toBeInTheDocument();
   });
   test("ErrorPage renders error statusText", () => {
-    const useRouterErrorSpy = jest
-      .spyOn(reactRouter, "useRouteError")
-      .mockImplementationOnce(() => ({
-        statusText: "Test message",
-        message: "Other message",
-      }));
+    jest.spyOn(reactRouter, "useRouteError").mockImplementationOnce(() => ({
+      statusText: "Test message",
+      message: "Other message",
+    }));
     render(<ErrorPage />);
     const messageElement = screen.getByText("Test message");
     expect(messageElement).toBeInTheDocument();
