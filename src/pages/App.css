@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+form.react-hooks-forms {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  margin: auto;
+}
+
+input.react-hooks-forms {
+  margin: 10px;
+}

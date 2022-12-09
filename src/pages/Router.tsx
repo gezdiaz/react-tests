@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Calculator from "./Calculator";
 import ErrorPage from "./ErrorPage";
+import { ReactHookForm } from "./ReactHookForm";
 import Root from "./Root";
 import User, { loader as userLoader } from "./User";
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         path: "/user/:userId",
         element: <User />,
         loader: userLoader,
+      },
+      {
+        path: "/forms/react-hook-forms",
+        element: <ReactHookForm />,
       },
     ],
   },

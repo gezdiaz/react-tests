@@ -13,6 +13,9 @@ const Root = (): JSX.Element => {
           <li>
             <Link to={"/default-app"}>Default App</Link>
           </li>
+          <li>
+            <Link to={"/forms/react-hook-forms"}>React-hook-forms</Link>
+          </li>
         </ul>
       </nav>
       <div id="page">
